@@ -1,0 +1,86 @@
+/* =========================================================
+   CINEMATIC TYPOGRAPHY
+   ========================================================= */
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+.font-sans {
+    font-family: var(--font-sans);
+}
+
+.cinematic-eyebrow {
+    margin: 0;
+
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    font-weight: 600;
+    line-height: 1;
+
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+
+    color: var(--color-gold);
+}
+
+.cinematic-title {
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 11vw, 11rem);
+    font-weight: 400;
+    line-height: 0.88;
+
+    letter-spacing: -0.045em;
+
+    color: var(--color-ivory);
+}
+
+.cinematic-title--medium {
+    font-size: clamp(3.5rem, 8vw, 8rem);
+}
+
+.cinematic-title--small {
+    font-size: clamp(2.75rem, 6vw, 6rem);
+}
+
+.cinematic-copy {
+    max-width: 36rem;
+    margin: 0;
+
+    font-family: var(--font-sans);
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+    font-weight: 400;
+    line-height: 1.8;
+
+    letter-spacing: -0.01em;
+
+    color: var(--color-ivory-soft);
+}
+
+.cinematic-quote {
+    max-width: 52rem;
+    margin: 0;
+
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4.5vw, 5rem);
+    font-weight: 400;
+    line-height: 1.05;
+
+    letter-spacing: -0.025em;
+
+    color: var(--color-ivory);
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.text-ivory {
+    color: var(--color-ivory);
+}
+
+.text-muted {
+    color: var(--color-ivory-muted);
+}

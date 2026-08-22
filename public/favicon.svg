@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+    <defs>
+        <linearGradient id="gold" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFF1B0"/>
+            <stop offset="0.22" stop-color="#E6C875"/>
+            <stop offset="0.5" stop-color="#B88932"/>
+            <stop offset="0.76" stop-color="#F0D98C"/>
+            <stop offset="1" stop-color="#8A621F"/>
+        </linearGradient>
+
+        <linearGradient id="goldInner" x1="20" y1="16" x2="45" y2="49" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFF3B8"/>
+            <stop offset="0.45" stop-color="#D5AE55"/>
+            <stop offset="1" stop-color="#9B6D24"/>
+        </linearGradient>
+    </defs>
+
+    <!-- Outer rakhi thread -->
+    <path d="M5 32H18" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" />
+
+    <path d="M46 32H59" stroke="url(#gold)" stroke-width="3" stroke-linecap="round" />
+
+    <!-- Main rakhi medallion -->
+    <circle cx="32" cy="32" r="22" fill="#4D1818" stroke="url(#gold)" stroke-width="3" />
+
+    <!-- Inner ornamental ring -->
+    <circle cx="32" cy="32" r="16" fill="none" stroke="url(#goldInner)" stroke-width="1.4" opacity=".9" />
+
+    <!-- Minimal four-petal rakhi motif -->
+    <path d="
+      M32 23
+      C35 27 35 29 32 32
+      C29 29 29 27 32 23Z
+
+      M41 32
+      C37 35 35 35 32 32
+      C35 29 37 29 41 32Z
+
+      M32 41
+      C29 37 29 35 32 32
+      C35 35 35 37 32 41Z
+
+      M23 32
+      C27 29 29 29 32 32
+      C29 35 27 35 23 32Z
+    " fill="url(#goldInner)" />
+
+    <!-- Center jewel -->
+    <circle cx="32" cy="32" r="3" fill="#FFF0A8" />
+
+    <!-- Tiny thread details -->
+    <circle cx="11" cy="32" r="1.5" fill="#E7C875"/>
+    <circle cx="53" cy="32" r="1.5" fill="#E7C875"/>
+</svg>

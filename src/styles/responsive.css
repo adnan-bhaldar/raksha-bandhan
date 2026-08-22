@@ -1,0 +1,258 @@
+/* =========================================================
+   RESPONSIVE COMPOSITIONS
+   ========================================================= */
+
+@media (max-width: 768px) {
+    :root {
+        --page-gutter: 1.25rem;
+    }
+
+    .cinematic-title {
+        font-size: clamp(3.4rem, 17vw, 6rem);
+        line-height: 0.9;
+    }
+
+    .cinematic-title--medium {
+        font-size: clamp(3rem, 14vw, 5rem);
+    }
+
+    .cinematic-title--small {
+        font-size: clamp(2.5rem, 11vw, 4rem);
+    }
+
+    .cinematic-copy {
+        max-width: 21rem;
+
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .cinematic-quote {
+        max-width: 22rem;
+
+        font-size: clamp(1.9rem, 8vw, 3rem);
+    }
+
+    .scene-light {
+        width: 30rem;
+        height: 30rem;
+
+        filter: blur(15px);
+    }
+
+    .scroll-indicator {
+        bottom: 1.5rem;
+    }
+
+    .scroll-indicator__line {
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .cinematic-title {
+        font-size: clamp(3rem, 18vw, 4.5rem);
+    }
+
+    .cinematic-copy {
+        max-width: 19rem;
+    }
+
+    .cinematic-button {
+        min-height: 3.1rem;
+        padding-inline: 1.25rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cinematic-page::before {
+        animation: none;
+    }
+
+    .scroll-indicator__line::after {
+        animation: none;
+    }
+}
+
+/* =========================================================
+   CREATOR PAGE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 640px) {
+    .creator-hero {
+        width: calc(100% - 2rem);
+
+        padding-block: 5rem 5rem;
+    }
+
+    .creator-mark {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        margin-bottom: 1.5rem;
+    }
+
+    .creator-title {
+        margin-top: 1rem;
+
+        font-size: clamp(3.25rem, 16vw, 5rem);
+    }
+
+    .creator-description {
+        max-width: 20rem;
+
+        margin-top: 1.35rem;
+
+        font-size: 0.92rem;
+    }
+
+    .creator-form {
+        margin-top: 2rem;
+    }
+
+    .creator-input-wrap input {
+        height: 3rem;
+
+        padding-inline: 1rem;
+
+        font-size: 0.85rem;
+    }
+
+    .creator-input-wrap button {
+        width: 3rem;
+        height: 3rem;
+
+        flex-basis: 3rem;
+    }
+
+    .creator-result {
+        margin-top: 1.5rem;
+    }
+
+    .creator-result__actions {
+        flex-direction: column;
+    }
+
+    .creator-footer {
+        bottom: 1rem;
+
+        font-size: 0.58rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .creator-hero {
+        width: calc(100% - 1.5rem);
+    }
+
+    .creator-title {
+        font-size: 3rem;
+    }
+
+    .creator-description {
+        max-width: 18rem;
+    }
+}
+
+/* =========================================================
+   SCENE 01 RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .scene-01 {
+        min-height: 160svh;
+    }
+
+    .scene-01__content {
+        padding:
+            7rem 1.5rem 9rem;
+    }
+
+    .scene-01__eyebrow {
+        max-width: 16rem;
+
+        line-height: 1.8;
+    }
+
+    .scene-01__name-wrap {
+        margin-top: 1.6rem;
+    }
+
+    .scene-01__name {
+        max-width: calc(100vw - 2rem);
+
+        font-size: clamp(3.5rem,
+                17vw,
+                7rem);
+
+        overflow-wrap: anywhere;
+    }
+
+    .scene-01__name-line {
+        margin-top: 1.4rem;
+    }
+
+    .scene-01__greeting {
+        flex-direction: column;
+        gap: 0.5rem;
+
+        margin-top: 1.4rem;
+
+        font-size: 0.6rem;
+    }
+
+    .scene-thread {
+        top: 14%;
+
+        width: 150vw;
+        height: 125vw;
+
+        opacity: 0.75;
+    }
+
+    .scene-01__light {
+        width: 100vw;
+    }
+
+    .scene-01__scroll {
+        bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .scene-01 {
+        min-height: 150svh;
+    }
+
+    .scene-01__content {
+        padding-inline: 1rem;
+    }
+
+    .scene-01__name {
+        font-size: clamp(3.1rem,
+                17vw,
+                5rem);
+
+        letter-spacing: -0.045em;
+    }
+
+    .scene-thread {
+        top: 16%;
+
+        width: 180vw;
+        height: 145vw;
+
+        transform: translateX(-50%) rotate(-4deg);
+
+        opacity: 0.62;
+    }
+
+    .thread-bead {
+        width: 3px;
+        height: 3px;
+    }
+
+    .scene-particle:nth-child(n + 20) {
+        display: none;
+    }
+}

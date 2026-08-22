@@ -1,0 +1,607 @@
+/* =========================================================
+   CINEMATIC FOUNDATION
+   ========================================================= */
+
+.cinematic-page {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    overflow: clip;
+
+    isolation: isolate;
+
+    background: var(--color-bg);
+}
+
+.cinematic-scene {
+    position: relative;
+
+    width: 100%;
+    min-height: 100svh;
+
+    overflow: clip;
+}
+
+.cinematic-scene__content {
+    position: relative;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(calc(100% - (var(--page-gutter) * 2)),
+            90rem);
+
+    min-height: 100svh;
+
+    margin-inline: auto;
+}
+
+.cinematic-viewport {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100svh;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.cinematic-overlay {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+.scene-light {
+    position: absolute;
+
+    width: 50rem;
+    height: 50rem;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(201, 161, 91, 0.12) 0%,
+            rgba(201, 161, 91, 0.035) 30%,
+            transparent 70%);
+
+    filter: blur(20px);
+
+    pointer-events: none;
+}
+
+.scene-vignette {
+    position: fixed;
+    inset: 0;
+
+    z-index: 20;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at center,
+            transparent 38%,
+            rgba(0, 0, 0, 0.14) 65%,
+            rgba(0, 0, 0, 0.62) 100%);
+}
+
+.scene-fade {
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(to bottom,
+            var(--color-bg) 0%,
+            transparent 25%,
+            transparent 75%,
+            var(--color-bg) 100%);
+}
+
+.story-scroll-space {
+    position: relative;
+
+    width: 100%;
+}
+
+.story-scroll-space--large {
+    height: 700vh;
+}
+
+.story-scroll-space--medium {
+    height: 500vh;
+}
+
+/* =========================================================
+   SCENE 01 — CINEMATIC INTRO
+   ========================================================= */
+
+.scene-01 {
+    position: relative;
+
+    min-height: 180svh;
+
+    overflow: clip;
+
+    isolation: isolate;
+
+    background: #080706;
+}
+
+.scene-01__background {
+    position: absolute;
+    inset: 0;
+
+    z-index: -10;
+
+    background:
+        radial-gradient(ellipse 60% 50% at 50% 45%,
+            rgba(102, 61, 20, 0.13),
+            transparent 65%),
+        radial-gradient(ellipse 35% 30% at 75% 25%,
+            rgba(201, 161, 91, 0.055),
+            transparent 70%),
+        linear-gradient(180deg,
+            #080706 0%,
+            #0a0807 48%,
+            #060505 100%);
+}
+
+.scene-01__vignette {
+    position: absolute;
+    inset: 0;
+
+    z-index: -4;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at center,
+            transparent 25%,
+            rgba(0, 0, 0, 0.25) 65%,
+            rgba(0, 0, 0, 0.75) 100%);
+}
+
+.scene-01__grain {
+    position: absolute;
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    opacity: 0.028;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+.scene-01__light {
+    position: absolute;
+
+    top: 35%;
+    left: 50%;
+
+    z-index: -3;
+
+    width: min(70vw, 60rem);
+    aspect-ratio: 1;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(201, 161, 91, 0.075) 0%,
+            rgba(201, 161, 91, 0.035) 25%,
+            rgba(201, 161, 91, 0.012) 45%,
+            transparent 70%);
+
+    filter: blur(12px);
+}
+
+.scene-01__light-core {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 20%;
+    aspect-ratio: 1;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(239, 207, 143, 0.12);
+
+    filter: blur(45px);
+
+    animation:
+        scene-breathe 6s ease-in-out infinite;
+}
+
+@keyframes scene-breathe {
+
+    0%,
+    100% {
+        opacity: 0.45;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+}
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
+
+.scene-particles {
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+.scene-particle {
+    position: absolute;
+
+    top: var(--particle-y);
+    left: var(--particle-x);
+
+    width: var(--particle-size);
+    height: var(--particle-size);
+
+    border-radius: 50%;
+
+    background: rgba(226, 194, 126, 0.8);
+
+    box-shadow:
+        0 0 10px rgba(201, 161, 91, 0.45),
+        0 0 24px rgba(201, 161, 91, 0.12);
+
+    opacity: 0.1;
+
+    animation:
+        particle-float 5s ease-in-out var(--particle-delay) infinite alternate;
+}
+
+@keyframes particle-float {
+    from {
+        transform: translate3d(0, 12px, 0);
+        opacity: 0.04;
+    }
+
+    to {
+        transform: translate3d(0, -18px, 0);
+        opacity: 0.65;
+    }
+}
+
+/* =========================================================
+   GOLDEN THREAD
+   ========================================================= */
+
+.scene-thread {
+    position: absolute;
+
+    top: 8%;
+    left: 50%;
+
+    z-index: 1;
+
+    width: min(100vw, 1200px);
+    height: min(83vw, 1000px);
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+.scene-thread__svg {
+    width: 100%;
+    height: 100%;
+
+    overflow: visible;
+}
+
+.thread-bead {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: #f0d48e;
+
+    box-shadow:
+        0 0 8px rgba(240, 212, 142, 0.8),
+        0 0 22px rgba(201, 161, 91, 0.35);
+
+    animation:
+        bead-pulse 3s ease-in-out infinite alternate;
+}
+
+.thread-bead--one {
+    top: 19%;
+    left: 32%;
+}
+
+.thread-bead--two {
+    top: 33%;
+    left: 54%;
+
+    animation-delay: 0.8s;
+}
+
+.thread-bead--three {
+    top: 46%;
+    left: 78%;
+
+    animation-delay: 1.4s;
+}
+
+@keyframes bead-pulse {
+    from {
+        opacity: 0.25;
+        transform: scale(0.75);
+    }
+
+    to {
+        opacity: 0.9;
+        transform: scale(1.35);
+    }
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.scene-01__content {
+    position: sticky;
+    top: 0;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100svh;
+
+    padding:
+        8rem 2rem 10rem;
+
+    text-align: center;
+}
+
+.scene-01__eyebrow {
+    margin: 0;
+
+    font-family: var(--font-sans);
+
+    font-size: clamp(0.58rem,
+            0.8vw,
+            0.72rem);
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.3em;
+
+    text-transform: uppercase;
+
+    color: rgba(201, 161, 91, 0.72);
+
+    text-shadow:
+        0 0 30px rgba(201, 161, 91, 0.15);
+}
+
+.scene-01__name-wrap {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 2rem;
+}
+
+.scene-01__name {
+    display: block;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(4.5rem,
+            12vw,
+            11rem);
+
+    font-weight: 400;
+
+    line-height: 0.9;
+
+    letter-spacing: -0.055em;
+
+    color: var(--color-ivory);
+
+    text-shadow:
+        0 0 50px rgba(248, 241, 231, 0.045),
+        0 0 100px rgba(201, 161, 91, 0.04);
+}
+
+.scene-01__name-line {
+    width: min(10rem, 35vw);
+    height: 1px;
+
+    margin-top: 1.8rem;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(201, 161, 91, 0.7),
+            transparent);
+
+    box-shadow:
+        0 0 18px rgba(201, 161, 91, 0.15);
+}
+
+.scene-01__greeting {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    margin-top: 1.6rem;
+
+    font-family: var(--font-sans);
+
+    font-size: clamp(0.68rem,
+            1vw,
+            0.8rem);
+
+    font-weight: 500;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: rgba(248, 241, 231, 0.52);
+}
+
+.scene-01__greeting-mark {
+    color: var(--color-gold);
+    opacity: 0.75;
+}
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
+
+.scene-01__scroll {
+    position: absolute;
+
+    bottom: 3.5rem;
+    left: 50%;
+
+    z-index: 8;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transform: translateX(-50%);
+
+    color: rgba(248, 241, 231, 0.4);
+
+    pointer-events: none;
+}
+
+.scene-01__scroll>span:first-child {
+    font-size: 0.58rem;
+    font-weight: 600;
+
+    letter-spacing: 0.25em;
+
+    text-transform: uppercase;
+}
+
+.scene-01__scroll-line {
+    position: relative;
+
+    width: 1px;
+    height: 3.5rem;
+
+    margin-top: 0.8rem;
+
+    overflow: hidden;
+
+    background: rgba(248, 241, 231, 0.1);
+}
+
+.scene-01__scroll-line>span {
+    position: absolute;
+
+    top: -100%;
+    left: 0;
+
+    width: 100%;
+    height: 60%;
+
+    background:
+        linear-gradient(to bottom,
+            transparent,
+            var(--color-gold),
+            transparent);
+
+    animation:
+        scroll-line 2.2s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+@keyframes scroll-line {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(300%);
+    }
+}
+
+.scene-01__scroll svg {
+    margin-top: 0.5rem;
+
+    animation:
+        scroll-arrow 2.2s ease-in-out infinite;
+}
+
+@keyframes scroll-arrow {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: translateY(0);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: translateY(4px);
+    }
+}
+
+/* =========================================================
+   NEXT SCENE PLACEHOLDER
+   ========================================================= */
+
+.scene-02-placeholder {
+    min-height: 100svh;
+
+    background:
+        radial-gradient(ellipse at 50% 0%,
+            rgba(201, 161, 91, 0.035),
+            transparent 55%),
+        #060505;
+}
