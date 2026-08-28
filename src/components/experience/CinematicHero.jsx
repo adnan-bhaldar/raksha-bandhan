@@ -13,7 +13,7 @@ function CinematicHero({ sisterName }) {
     useHeroAnimation()
 
     return (
-        <div data-experience>
+        <>
             {/* =========================================
                 HERO
                ========================================= */}
@@ -132,7 +132,7 @@ function CinematicHero({ sisterName }) {
                ========================================= */}
 
             <FinalWish sisterName={sisterName} />
-        </div>
+        </>
     )
 }
 
