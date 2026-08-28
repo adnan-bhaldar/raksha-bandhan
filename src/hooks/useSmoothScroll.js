@@ -3,10 +3,7 @@ import Lenis from 'lenis'
 
 function useSmoothScroll() {
     useEffect(() => {
-        const isTouchDevice = window.matchMedia(
-            '(pointer: coarse)',
-        ).matches
-
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches
         if (isTouchDevice) {
             return undefined
         }
@@ -19,12 +16,10 @@ function useSmoothScroll() {
         })
 
         let frameId
-
         const raf = (time) => {
             lenis.raf(time)
             frameId = requestAnimationFrame(raf)
         }
-
         frameId = requestAnimationFrame(raf)
 
         return () => {
