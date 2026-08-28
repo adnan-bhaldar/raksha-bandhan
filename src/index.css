@@ -53,6 +53,7 @@ html {
   color: var(--color-ivory);
 
   overflow-x: hidden;
+  touch-action: pan-y;  
 
   font-family: var(--font-sans);
 
@@ -72,6 +73,7 @@ body {
   min-height: 100vh;
 
   overflow-x: hidden;
+  touch-action: pan-y;  
 
   overscroll-behavior-y: none;
 
