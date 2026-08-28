@@ -3,6 +3,14 @@ import Lenis from 'lenis'
 
 function useSmoothScroll() {
     useEffect(() => {
+        const isTouchDevice = window.matchMedia(
+            '(pointer: coarse)',
+        ).matches
+
+        if (isTouchDevice) {
+            return undefined
+        }
+
         const lenis = new Lenis({
             duration: 1.2,
             smoothWheel: true,
